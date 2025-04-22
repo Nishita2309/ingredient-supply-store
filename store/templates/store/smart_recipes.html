@@ -1,0 +1,48 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Smart Recipes{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Smart Recipes Based on Your Ingredients</h2>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Recipe Card 1 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'store/images/recipe_pasta.jpg' %}" class="card-img-top" alt="Creamy Garlic Pasta">
+                <div class="card-body">
+                    <h5 class="card-title">Creamy Garlic Pasta</h5>
+                    <p class="card-text"><strong>Ingredients:</strong> Pasta, Cream, Garlic, Cheese</p>
+                    <p class="card-text"><strong>Steps:</strong> Boil pasta, sauté garlic, mix with cream and cheese.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe Card 2 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'store/images/recipe_salad.jpg' %}" class="card-img-top" alt="Fresh Veggie Salad">
+                <div class="card-body">
+                    <h5 class="card-title">Fresh Veggie Salad</h5>
+                    <p class="card-text"><strong>Ingredients:</strong> Lettuce, Tomato, Cucumber, Olive oil</p>
+                    <p class="card-text"><strong>Steps:</strong> Chop vegetables, mix in a bowl, drizzle with olive oil.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe Card 3 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'store/images/recipe_friedrice.jpg' %}" class="card-img-top" alt="Veg Fried Rice">
+                <div class="card-body">
+                    <h5 class="card-title">Veg Fried Rice</h5>
+                    <p class="card-text"><strong>Ingredients:</strong> Rice, Vegetables, Soy Sauce</p>
+                    <p class="card-text"><strong>Steps:</strong> Cook rice, sauté veggies, mix with soy sauce.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

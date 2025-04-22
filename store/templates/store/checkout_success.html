@@ -1,0 +1,10 @@
+{% extends 'store/base.html' %}
+{% block title %}Order Successful{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Thank you for your order!</h2>
+    <p>Your order ID is <strong>#{{ order.id }}</strong></p>
+    <p>Total amount: ₹{{ order.total_amount }}</p>
+    <a href="{% url 'view_orders' %}" class="btn btn-success mt-3">View My Orders</a>
+</div>
+{% endblock %}

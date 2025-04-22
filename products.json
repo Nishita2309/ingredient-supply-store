@@ -1,0 +1,25 @@
+[
+    {
+      "model": "store.product",
+      "pk": 1,
+      "fields": {
+        "name": "Tomatoes",
+        "description": "Fresh organic tomatoes",
+        "price": 2.5,
+        "available": true,
+        "created_at": "2024-01-01T10:00:00Z"
+      }
+    },
+    {
+      "model": "store.product",
+      "pk": 2,
+      "fields": {
+        "name": "Cheese",
+        "description": "Cheddar cheese block",
+        "price": 4.0,
+        "available": true,
+        "created_at": "2024-01-01T11:00:00Z"
+      }
+    }
+  ]
+  

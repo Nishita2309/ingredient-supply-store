@@ -1,0 +1,115 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Pricing{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Calculate Your Savings</h2>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form id="savings-form">
+          <div class="mb-3">
+            <label for="spend" class="form-label">Monthly Spend on Ingredients (₹)</label>
+            <input type="number" id="spend" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="discount" class="form-label">Estimated Discount (%)</label>
+            <input type="number" id="discount" class="form-control" value="20" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Calculate Savings</button>
+        </form>
+        <div class="result mt-4">
+          <h4>Total Monthly Savings: ₹<span id="monthly-savings">0</span></h4>
+          <h5>Annual Savings: ₹<span id="annual-savings">0</span></h5>
+        </div>
+      </div>
+    </div>
+  
+    <hr class="my-5">
+  
+    <div class="savings-examples">
+      <h3 class="text-center mb-4">Average Savings Examples</h3>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h5>Small Restaurant</h5>
+          <p>Spend: ₹20,000/month</p>
+          <p>Savings: ₹4,000/month</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Medium Restaurant</h5>
+          <p>Spend: ₹50,000/month</p>
+          <p>Savings: ₹10,000/month</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Large Restaurant</h5>
+          <p>Spend: ₹1,00,000/month</p>
+          <p>Savings: ₹20,000/month</p>
+        </div>
+      </div>
+    </div>
+  
+    <hr class="my-5">
+  
+    <div class="methodology">
+      <h4>How We Calculate Savings</h4>
+      <p>
+        We compare our prices with standard retail prices and calculate an average discount. 
+        Savings may vary based on product type, quantity, and availability.
+      </p>
+    </div>
+  </div>
+  
+
+<h2 class="mb-4 text-center">Pricing Plans</h2>
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card border-primary text-center mb-4">
+            <div class="card-header bg-primary text-white">Basic</div>
+            <div class="card-body">
+                <h3 class="card-title">₹199/month</h3>
+                <ul class="list-unstyled">
+                    <li>10 Product Listings</li>
+                    <li>Email Support</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Choose Plan</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-success text-center mb-4">
+            <div class="card-header bg-success text-white">Pro</div>
+            <div class="card-body">
+                <h3 class="card-title">₹499/month</h3>
+                <ul class="list-unstyled">
+                    <li>Unlimited Products</li>
+                    <li>Priority Support</li>
+                    <li>Free Shipping</li>
+                </ul>
+                <a href="#" class="btn btn-success">Choose Plan</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("savings-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const spend = parseFloat(document.getElementById("spend").value);
+      const discount = parseFloat(document.getElementById("discount").value);
+      
+      if (!isNaN(spend) && !isNaN(discount)) {
+        const monthlySavings = (spend * discount) / 100;
+        const annualSavings = monthlySavings * 12;
+        
+        document.getElementById("monthly-savings").textContent = monthlySavings.toFixed(2);
+        document.getElementById("annual-savings").textContent = annualSavings.toFixed(2);
+      }
+    });
+  </script>
+  
+
+{% endblock %}
+

@@ -1,0 +1,73 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Hygiene and Safety Measures{% endblock %}
+
+{% block content %}
+<section class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">Our Hygiene and Safety Measures</h2>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'store/images/contactless.png' %}" class="card-img-top" alt="Zero-Touch Delivery">
+        <div class="card-body">
+          <h5 class="card-title">Zero-Touch Delivery</h5>
+          <p class="card-text">All deliveries are contactless to ensure your safety.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'store/images/sanitization.png' %}" class="card-img-top" alt="Sanitization">
+        <div class="card-body">
+          <h5 class="card-title">Regular Warehouse Sanitization</h5>
+          <p class="card-text">Our warehouses are cleaned frequently with disinfectants.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'store/images/temperature.png' %}" class="card-img-top" alt="Fever Screening">
+        <div class="card-body">
+          <h5 class="card-title">Fever Screening</h5>
+          <p class="card-text">All staff undergo regular fever screening using infrared thermometers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'store/images/training.png' %}" class="card-img-top" alt="Hygiene Training">
+        <div class="card-body">
+          <h5 class="card-title">Hygiene Training</h5>
+          <p class="card-text">All employees are trained in hygiene practices and COVID-19 protocols.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'store/images/mask.png' %}" class="card-img-top" alt="Masks and Sanitizers">
+        <div class="card-body">
+          <h5 class="card-title">Masks & Sanitizers</h5>
+          <p class="card-text">Delivery staff are equipped with masks and hand sanitizers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{% static 'store/images/disinfect.png' %}" class="card-img-top" alt="Inventory Disinfection">
+        <div class="card-body">
+          <h5 class="card-title">Inventory Disinfection</h5>
+          <p class="card-text">All crates and items are disinfected regularly for maximum safety.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

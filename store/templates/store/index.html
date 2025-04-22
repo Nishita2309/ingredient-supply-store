@@ -1,0 +1,128 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Home{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<!-- Carousel for Advertisements -->
+<div id="homepageCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <a href="{% url 'deals' %}">
+        <img src="{% static 'store/images/ad1.png' %}" class="d-block w-100" alt="Deals">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <a href="{% url 'bestsellers' %}">
+        <img src="{% static 'store/images/ad2.png' %}" class="d-block w-100" alt="Bestsellers">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <a href="{% url 'premium_products' %}">
+        <img src="{% static 'store/images/ad3.png' %}" class="d-block w-100" alt="Premium">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="carousel-item">
+      <a href="{% url 'smart_recipes' %}">
+        <img src="{% static 'store/images/ad4.png' %}" class="d-block w-100" alt="ChefGPT">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+  
+  <!-- BOOTSTRAP JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!--Hygiene Banner-->
+<div class="hygiene-banner mt-4 mb-4 text-center">
+    <a href="{% url 'hygiene_info' %}">
+        <img src="{% static 'store/images/hygiene_banner.jpg' %}" alt="Hygiene Info" class="img-fluid">
+    </a>
+</div>
+  
+<!-- Departments Section -->
+<section class="departments container my-5">
+    <h2 class="text-center mb-4">Departments</h2>
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <img src="{% static 'store/images/vegetables.jpg' %}" class="img-fluid rounded" alt="Vegetables">
+        <p>Vegetables</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="{% static 'store/images/spices.jpg' %}" class="img-fluid rounded" alt="Spices">
+        <p>Spices</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="{% static 'store/images/dairy.jpg' %}" class="img-fluid rounded" alt="Dairy">
+        <p>Dairy Products</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <img src="{% static 'store/images/fruits.jpg' %}" class="img-fluid rounded" alt="Fruits">
+        <p>Fruits</p>
+      </div>
+    </div>
+  </section>
+  
+ 
+<!-- banners for on sale and bestsellers -->
+<div class="row justify-content-center my-5">
+    <div class="col-md-5 mb-3">
+      <a href="{% url 'deals' %}">
+        <img src="{% static 'store/images/sale_banner.jpg' %}" alt="On Sale" class="img-fluid rounded shadow">
+      </a>
+    </div>
+    <div class="col-md-5 mb-3">
+      <a href="{% url 'bestsellers' %}">
+        <img src="{% static 'store/images/bestsellers_banner.jpg' %}" alt="Bestsellers" class="img-fluid rounded shadow">
+      </a>
+    </div>
+  </div>
+
+<main>
+    <h2>Available Products</h2>
+    <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p><strong>Price:</strong> ₹{{ product.price }}</p>
+            <p><strong>Quantity:</strong> {{ product.quantity }} {{ product.unit }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+
+{% endblock %}

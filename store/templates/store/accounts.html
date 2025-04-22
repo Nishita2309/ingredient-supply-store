@@ -1,0 +1,35 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Account Settings{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Sidebar with links -->
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="{% url 'login' %}?embed=true" target="accountFrame" class="list-group-item list-group-item-action">Login</a>
+                <a href="{% url 'register' %}?embed=true" target="accountFrame" class="list-group-item list-group-item-action">Register</a>
+                <a href="{% url 'dashboard' %}?embed=true" target="accountFrame" class="list-group-item list-group-item-action">Dashboard</a>
+                <a href="{% url 'view_orders' %}?embed=true" target="accountFrame" class="list-group-item list-group-item-action">My Orders</a>
+                <a href="{% url 'profile' %}?embed=true" target="accountFrame" class="list-group-item list-group-item-action">Profile</a>
+                <a href="{% url 'order_history' %}?embed=true" target="accountFrame" class="list-group-item list-group-item-action">Order History</a>
+                <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-danger">Logout</a>
+            </div>
+        </div>
+
+        <!-- Content area with a single iframe -->
+        <div class="col-md-9" style="height: 80vh;">
+            <iframe 
+                name="accountFrame" 
+                src="{% url 'dashboard' %}?embed=true" 
+                width="100%" 
+                height="100%" 
+                frameborder="0"
+                style="border: none; min-height: 100%;">
+            </iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

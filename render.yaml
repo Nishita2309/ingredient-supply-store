@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn restaurant_ingredient_supply_store.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: restaurant_ingredient_supply_store.settings
+      - key: PYTHON_VERSION
+        value: 3.11

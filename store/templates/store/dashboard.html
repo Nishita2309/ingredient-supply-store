@@ -1,0 +1,8 @@
+{% extends 'store/base_embed.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Welcome, {{ request.user.username }}!</h2>
+  <a href="{% url 'profile' %}" class="btn btn-info">View Profile</a>
+  <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+</div>
+{% endblock %}

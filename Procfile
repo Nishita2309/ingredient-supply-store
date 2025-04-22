@@ -1,0 +1,1 @@
+web: gunicorn restaurant_ingredient_supply_store.wsgi
