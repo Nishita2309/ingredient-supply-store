@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'restaurant_ingredient_supply_store.urls'
@@ -140,6 +142,15 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 import os
 import dj_database_url
 
+import os
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # for development
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # for production
 
 
 
